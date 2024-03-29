@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notiz App</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="manifest" href="./img/site.webmanifest">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body onload="render()" class="scrollbar">
+    <nav>
+        <div class="overlayMenu" id="b-menu">
+            <div class="menu-icon" onclick="closeMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>                
+                <div class="bar"></div>
+            </div>
+            
+            <a href="#" onclick="render()">Notizen</a>
+            <a href="#" onclick="openTrash()">Papierkorb</a>
+        </div>
+    
+        <div class="menu-icon" onclick="showMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>                
+            <div class="bar"></div>
+        </div>
+        <div class="nav-middle">
+            <a href="#" class="logo" onclick="render()"><img src="./img/favicon-32x32.png"></a>
+            <a href="#" class="d-none" onclick="render()">Notizen</a>
+        </div>
+        <a href="#"><img class="img-icon" src="./img/trash.png" onclick="openTrash()"></a>
+    </nav>
+
+    <form id="form" onsubmit="addNote(); return false;">
+        <input type="text" id="title" placeholder="Titel" required>
+        <textarea name="message" id="note" placeholder="Notiz" required></textarea>
+        <button id="btn" type="submit">Hinzufügen</button>
+    </form>
+
+    <div id="content" class="content">
+
+    </div>
+</body>
+</html>
